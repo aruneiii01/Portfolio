@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProfileOutline from "@/components/ProfileOutline";
 import NetworkBackground from "@/components/NetworkBackground";
 
-const basePath = process.env.NODE_ENV === "production" ? "/gfbs3-portfolio-demo" : "";
+const basePath = process.env.NODE_ENV === "production" ? "/Portfolio" : "";
 
 export default function Home() {
 
