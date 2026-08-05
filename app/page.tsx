@@ -77,7 +77,7 @@ export default function Home() {
               {/* Scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:100%_4px] z-20 pointer-events-none" />
               
-              <img 
+              <Image 
                 src={`${basePath}/me.jpg`}
                 alt="Profile"
                 fill
