@@ -1,13 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProfileOutline from "@/components/ProfileOutline";
+import NetworkBackground from "@/components/NetworkBackground";
 
 const basePath = process.env.NODE_ENV === "production" ? "/gfbs3-portfolio-demo" : "";
 
 export default function Home() {
+
+  const cardClass = `
+    group
+    p-6
+    bg-cyan-950/20
+    border border-cyan-500/20
+    rounded-sm
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:scale-[1.03]
+    hover:bg-cyan-900/30
+    hover:border-cyan-400/60
+    hover:shadow-xl
+    hover:shadow-cyan-500/20
+  `;
+
+  const headingClass = `
+    text-cyan-400
+    mb-4
+    tracking-widest
+    uppercase
+    text-xs
+    border-b border-cyan-800
+    pb-2
+    transition-all duration-300
+    group-hover:text-cyan-300
+    group-hover:border-cyan-500
+  `;
+
   return (
-    <div className="min-h-screen bg-[#050510] text-cyan-50 font-mono selection:bg-fuchsia-500/30 selection:text-fuchsia-200 overflow-x-hidden">
+    <>
+      <NetworkBackground />
+
+    <div className="relative min-h-screen bg-[#050510]/70 text-cyan-50 font-mono overflow-x-hidden">
       {/* Grid Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="fixed inset-0 z-10 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
         <div className="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-t from-fuchsia-900/20 to-transparent opacity-30" />
       </div>
@@ -37,8 +71,8 @@ export default function Home() {
             <h2 className="text-2xl font-bold tracking-widest text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
               {"// ABOUT_ME"}
             </h2>
-            
-            {/* Profile Image - Replace src with your image in /public */}
+
+              {/* Profile Image - Replace src with your image in /public */}
             <div className="relative w-full aspect-[4/5] border border-cyan-500/30 rounded-sm overflow-hidden bg-cyan-950/30 group">
               {/* Scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:100%_4px] z-20 pointer-events-none" />
@@ -47,34 +81,96 @@ export default function Home() {
                 src={`${basePath}/me.jpg`}
                 alt="Profile"
                 fill
+                priority
                 className="object-cover z-0 opacity-60 group-hover:opacity-100 transition-all duration-500 grayscale group-hover:grayscale-0"
               />
             </div>
+            </div>   
 
-          </div>
-          <div className="md:col-span-8 space-y-8 text-cyan-100/80 leading-relaxed font-light">
+            {/* Right column */}
+            <div className="md:col-span-8 space-y-8 text-cyan-100/80 leading-relaxed font-light">
             <p>
-              Every developer has a unique journey. Share yours here—whether you&apos;re self-taught, a bootcamp grad, or transitioning careers. <strong className="text-fuchsia-400 font-bold">Your story matters.</strong> Talk about what drives you to code and the impact you want to make.
+              I'm an AI & Machine Learning engineering student passionate about building intelligent, scalable, and real-world applications. I've worked on projects involving machine learning, deep learning, AI-powered data pipelines, time-series forecasting, and backend development using Python, PyTorch, FastAPI, Docker, React, and SQL.
+
+              Currently, I'm working as an <strong className="text-fuchsia-400 font-bold">Healthcare AI Deployment Intern</strong> where I help deploy AI solutions in healthcare and integrate them into real-world environments. I'm continuously learning modern AI technologies, MLOps, and scalable software engineering while building projects that bridge research with practical applications.
             </p>
-            <div className="p-6 bg-cyan-950/20 border border-cyan-500/20 rounded-sm relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-cyan-500" />
-              <div className="grid grid-cols-2 gap-8 font-mono text-sm">
-                <div>
-                  <h3 className="text-cyan-400 mb-4 tracking-widest uppercase text-xs border-b border-cyan-800 pb-2">STACK_TRACE</h3>
-                  <ul className="space-y-2 text-cyan-200/70">
-                    <li className="flex items-center gap-2"><span className="text-fuchsia-500">›</span> JavaScript / Python / TypeScript</li>
-                    <li className="flex items-center gap-2"><span className="text-fuchsia-500">›</span> React / Next.js / Node.js</li>
-                    <li className="flex items-center gap-2"><span className="text-fuchsia-500">›</span> Git / GitHub / VS Code</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-cyan-400 mb-4 tracking-widest uppercase text-xs border-b border-cyan-800 pb-2">PROTOCOLS</h3>
-                  <ul className="space-y-2 text-cyan-200/70">
-                    <li className="flex items-center gap-2"><span className="text-fuchsia-500">›</span> Always learning</li>
-                    <li className="flex items-center gap-2"><span className="text-fuchsia-500">›</span> Ship &gt; Perfect</li>
-                    <li className="flex items-center gap-2"><span className="text-fuchsia-500">›</span> Open source contributor</li>
-                  </ul>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-sm">
+              {/* Box 1 */}
+              <div className={cardClass}>
+                <h3 className={headingClass}>
+                  TECH_STACK
+                </h3>
+
+                <ul className="space-y-2 text-cyan-200/70">
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    Python / TypeScript / SQL
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    FastAPI / React / Next.js
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    PyTorch / Docker / PostgreSQL
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    Git / GitHub
+                  </li>
+                </ul>
+              </div>
+
+              {/* Box 2 */}
+              <div className={cardClass}>
+                <h3 className={headingClass}>
+                  SPECIALIZATIONS
+                </h3>
+
+                <ul className="space-y-2 text-cyan-200/70">
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    Artificial Intelligence &amp; Machine Learning
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    Backend API Development
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    Data Pipelines &amp; Automation
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    Scalable Software Systems
+                  </li>
+                </ul>
+              </div>
+
+              {/* Box 3 */}
+              <div className={cardClass}>
+                <h3 className={headingClass}>
+                  CURRENTLY_EXPLORING
+                </h3>
+
+                <ul className="space-y-2 text-cyan-200/70">
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    Large Language Models (LLMs)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    RAG &amp; Vector Databases
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    MLOps &amp; Cloud Deployment
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-500">›</span>
+                    AI Agents
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -84,41 +180,43 @@ export default function Home() {
         <section id="work" className="py-20 space-y-12">
           <div className="flex items-end justify-between border-b border-cyan-900/30 pb-4">
             <h2 className="text-2xl font-bold tracking-widest text-fuchsia-400 drop-shadow-[0_0_8px_rgba(232,121,249,0.6)]">
-              // YOUR_PROJECTS
+              // PROJECTS
             </h2>
-            <span className="text-xs font-mono text-cyan-700">Showcase what you&apos;ve built with style</span>
+            <span className="text-xs font-mono text-cyan-700">Here are the projects I worked on, complete with descriptions.</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Project 1 */}
             <ProjectCard 
-              title="PROJECT_ONE"
-              description="Your first amazing project goes here. Describe what problem it solves and the tech you used to build it."
-              tags={["REACT", "NEXTJS", "TAILWIND"]}
+              title="PATCHTST_PHM_FRAMEWORK_FOR
+              _RUL_IN_TURBOFAN_ENGINES"
+              description="s an intelligent predictive maintenance system developed to estimate the Remaining Useful Life (RUL) of turbofan aircraft engines using the NASA C-MAPSS dataset. The project employs the PatchTST deep learning model for accurate RUL prediction, integrates SHAP for model explainability, and uses an LLM to generate maintenance explanations and recommendations. An interactive R Shiny dashboard allows users to upload engine data, visualize predictions, and access AI-assisted maintenance insights, providing a complete end-to-end PHM solution."
+              tags={["PYTHON", "R", "PYTORCH", "LLM", "PATCHTST", "SHAP"]}
               color="cyan"
               href="#"
             />
             {/* Project 2 */}
             <ProjectCard 
-              title="PROJECT_TWO"
-              description="Your second project showcase. Tell visitors what makes this project special and what you learned building it."
-              tags={["JAVASCRIPT", "API", "CSS"]}
+              title="ATMOSMOOD_PIPELINE"
+              description="A containerized AI-powered application that integrates real-time weather data, sentiment analysis, workflow automation, and interactive visualization into a single platform. Built using FastAPI, PostgreSQL, Apache Airflow, React (Vite), and Docker, the project demonstrates a complete end-to-end data pipeline, from data collection and machine learning inference to storage, automation, and user-friendly visualization."
+              tags={["PYTHON", "DOCKER", "FASTAPI", "PYDANTIC", "POSTGRESQL", "REST APIs"]}
               color="fuchsia"
               href="#"
             />
             {/* Project 3 */}
             <ProjectCard 
-              title="PROJECT_THREE"
-              description="Another project to highlight your skills. Share the impact or results of this work."
-              tags={["TYPESCRIPT", "NODE", "EXPRESS"]}
+              title="DAILY LABOUR FINDING SYSTEM"
+              description="MERN stack web application that connects daily wage workers with employers. It enables employers to post job opportunities, search for workers based on their skills, and manage hiring efficiently. Workers can create profiles, update their availability, and apply for suitable jobs. The platform features secure authentication, role-based access, and a responsive interface, making the hiring process faster, more transparent, and accessible for both employers and labourers."
+              tags={["REACT.JS", "MONGODB", "EXPRESS", "NODE.JS", "HTML", "CSS"]}
               color="purple"
               href="#"
             />
             {/* Project 4 */}
-            <ProjectCard 
-              title="PROJECT_FOUR"
-              description="Keep building and adding to your portfolio. Each project tells part of your developer story."
-              tags={["PYTHON", "DJANGO", "POSTGRESQL"]}
+            <ProjectCard
+              title="AI_SYSTEMS_ENGINEER_ASSISTANT"
+              subtitle="Currently_Building"
+              description="A multimodal, multi-agent AI platform that helps monitor, analyze, and manage cloud infrastructure. It leverages LLMs, RAG, machine learning, Docker, and Kubernetes to understand logs, metrics, documents, and screenshots, perform anomaly detection and root cause analysis, and provide intelligent remediation recommendations. Built using a microservices architecture, the system demonstrates modern AI Engineering, MLOps, and cloud-native development practices for real-world infrastructure management."
+              tags={["PYTHON", "LANGGRAPH", "DOCKER", "POSTGRESQL", "CHROMADB", "OLLAMA"]}
               color="yellow"
               href="#"
             />
@@ -131,36 +229,44 @@ export default function Home() {
         <section id="contact" className="py-20 border-t border-cyan-900/30">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
-              READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">LAUNCH?</span>
+              LET'S <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">CONNECT</span>
             </h2>
             <p className="text-cyan-200/60 text-lg">
-              Fork this template on GitHub and make it yours. Update the content, add your projects, and deploy to GitHub Pages in under 30 minutes.
+              Have a project, opportunity, or idea?
+              <br />
+              Let's connect and create something meaningful.
             </p>
             <div className="flex flex-col items-center gap-6">
-              <a 
-                href="https://github.com/ladykerr/gfbs3-portfolio-demo" 
-                className="px-10 py-4 bg-fuchsia-600 text-white font-bold tracking-widest uppercase text-sm hover:bg-fuchsia-500 transition-all hover:shadow-[0_0_30px_rgba(232,121,249,0.6)] hover:scale-105 duration-300 clip-path-polygon"
-              >
-                FORK ON GITHUB
-              </a>
+                <a
+                  href={`${basePath}/ARUN PRAKASH S CV.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-10 py-4 bg-fuchsia-600 text-white font-bold tracking-widest uppercase text-sm hover:bg-fuchsia-500 transition-all hover:shadow-[0_0_30px_rgba(232,121,249,0.6)] hover:scale-105 duration-300"
+                >
+                  DOWNLOAD CV
+                </a>
               <div className="flex items-center gap-8 pt-4">
-                <SocialLink href="https://github.com" label="GITHUB" />
-                <SocialLink href="https://linkedin.com" label="LINKEDIN" />
-                <SocialLink href="https://twitter.com" label="TWITTER" />
+                <SocialLink href="https://github.com/aruneiii01" label="GITHUB" />
+                <SocialLink href="https://linkedin.com/in/arun-prakash-s-683877257" label="LINKEDIN" />
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="py-8 text-center text-xs font-mono text-cyan-900/50 border-t border-cyan-900/20">
-        <p>Made with ❤️ by <a href="https://gh.io/gfb" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.8)] transition-all">GitHub for Beginners</a> and <a href="https://gh.io/gfb-copilot" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.8)] transition-all">GitHub Copilot</a></p>
+      <footer className="py-8 text-center text-xs font-mono text-cyan-200/60 border-t border-cyan-900/20">
+        <p className="font-mono">
+          &gt; Designed & Developed by{" "}
+         <span className="text-cyan-400">Arun Prakash S.</span>
+        </p>
       </footer>
     </div>
+    </>
   );
 }
 
-function ProjectCard({ title, description, tags, color, href }: { title: string, description: string, tags: string[], color: "cyan" | "fuchsia" | "purple" | "yellow", href: string }) {
+
+function ProjectCard({ title, subtitle, description, tags, color, href }: { title: string, subtitle?: string, description: string, tags: string[], color: "cyan" | "fuchsia" | "purple" | "yellow", href: string }) {
   // Valid color options for the card styling
   const validColors = ["cyan", "fuchsia", "purple", "yellow"] as const;
   
@@ -184,10 +290,24 @@ function ProjectCard({ title, description, tags, color, href }: { title: string,
   return (
     <Link href={href} className={`group block space-y-4 p-6 bg-[#0a0a1a] border border-cyan-900/30 transition-all duration-300 ${colorClasses[safeColor]}`}>
       <div className="flex justify-between items-start">
-        <h3 className={`text-xl font-bold text-white tracking-wider transition-colors ${textColors[safeColor]}`}>
-          {title}
-        </h3>
-        <ArrowUpRightIcon className={`w-5 h-5 text-cyan-700 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 ${textColors[safeColor]}`} />
+        <div>
+          <h3
+            style={{ whiteSpace: "pre-line" }}
+            className={`text-xl font-bold text-white tracking-wider transition-colors ${textColors[safeColor]}`}
+          >
+            {title}
+          </h3>
+
+          {subtitle && (
+            <p className="text-xs text-gray-400 mt-1">
+              {subtitle}
+            </p>
+          )}
+        </div>
+
+        <ArrowUpRightIcon
+          className={`w-5 h-5 text-cyan-700 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 ${textColors[safeColor]}`}
+        />
       </div>
       <p className="text-sm text-cyan-100/60 leading-relaxed font-light border-l border-cyan-900/50 pl-4">
         {description}
