@@ -6,7 +6,6 @@ A beginner-friendly developer portfolio template with a retro-futuristic cyberpu
 
 ---
 
-## 🚀 Quick Start
 
 ### Option 1: Use This Template (Recommended)
 
