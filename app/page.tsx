@@ -90,9 +90,8 @@ export default function Home() {
             {/* Right column */}
             <div className="md:col-span-8 space-y-8 text-cyan-100/80 leading-relaxed font-light">
             <p>
-              I'm an AI & Machine Learning engineering student passionate about building intelligent, scalable, and real-world applications. I've worked on projects involving machine learning, deep learning, AI-powered data pipelines, time-series forecasting, and backend development using Python, PyTorch, FastAPI, Docker, React, and SQL.
-
-              Currently, I'm working as an <strong className="text-fuchsia-400 font-bold">Healthcare AI Deployment Intern</strong> where I help deploy AI solutions in healthcare and integrate them into real-world environments. I'm continuously learning modern AI technologies, MLOps, and scalable software engineering while building projects that bridge research with practical applications.
+              I'm an AI & Machine Learning engineering student passionate about building intelligent, scalable, and real-world software solutions. My experience spans machine learning, deep learning, time-series forecasting, backend development, and AI deployment, with hands-on work using Python, PyTorch, FastAPI, Docker, React, and SQL. Currently, I'm working as a 
+               <strong className="text-fuchsia-400 font-bold"> Healthcare AI Deployment Intern</strong> where I work with AI-powered patient monitoring systems, Raspberry Pi gateways, wearable sensors, APIs, and cloud-based platforms to bring AI solutions into real-world healthcare environments. I'm particularly interested in AI engineering, MLOps, intelligent systems, and scalable software architecture, and I enjoy turning AI concepts into practical solutions that can create meaningful impact.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-sm">
               {/* Box 1 */}
@@ -138,7 +137,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-fuchsia-500">›</span>
-                    Data Pipelines &amp; Automation
+                    CI/CD Pipelines &amp; Automation
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-fuchsia-500">›</span>
@@ -190,7 +189,7 @@ export default function Home() {
             <ProjectCard 
               title="PATCHTST_PHM_FRAMEWORK_FOR
               _RUL_IN_TURBOFAN_ENGINES"
-              description="s an intelligent predictive maintenance system developed to estimate the Remaining Useful Life (RUL) of turbofan aircraft engines using the NASA C-MAPSS dataset. The project employs the PatchTST deep learning model for accurate RUL prediction, integrates SHAP for model explainability, and uses an LLM to generate maintenance explanations and recommendations. An interactive R Shiny dashboard allows users to upload engine data, visualize predictions, and access AI-assisted maintenance insights, providing a complete end-to-end PHM solution."
+              description="A intelligent predictive maintenance system developed to estimate the Remaining Useful Life (RUL) of turbofan aircraft engines using the NASA C-MAPSS dataset. The project employs the PatchTST deep learning model for accurate RUL prediction, integrates SHAP for model explainability, and uses an LLM to generate maintenance explanations and recommendations. An interactive R Shiny dashboard allows users to upload engine data, visualize predictions, and access AI-assisted maintenance insights, providing a complete end-to-end PHM solution."
               tags={["PYTHON", "R", "PYTORCH", "LLM", "PATCHTST", "SHAP"]}
               color="cyan"
               href="#"
@@ -232,9 +231,9 @@ export default function Home() {
               LET'S <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">CONNECT</span>
             </h2>
             <p className="text-cyan-200/60 text-lg">
-              Have a project, opportunity, or idea?
+              Interested in working together or building something impactful?
               <br />
-              Let's connect and create something meaningful.
+              I'm always open to new ideas, opportunities, and collaborations.
             </p>
             <div className="flex flex-col items-center gap-6">
                 <a
