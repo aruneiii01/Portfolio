@@ -247,7 +247,7 @@ export default function Home() {
                 </a>
               <div className="flex items-center gap-8 pt-4">
                 <SocialLink href="https://github.com/aruneiii01" label="GITHUB" />
-                <SocialLink href="https://linkedin.com/in/arun-prakash-s-683877257" label="LINKEDIN" />
+                <SocialLink href="https://www.linkedin.com/in/arun-prakash-s-016136429" label="LINKEDIN" />
               </div>
             </div>
           </div>
